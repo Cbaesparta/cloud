@@ -29,7 +29,6 @@ export class IotMonitoringStack extends Stack {
       billingMode: dynamodb.BillingMode.PAY_PER_REQUEST,
       timeToLiveAttribute: 'expiresAt',
       pointInTimeRecovery: true,
-      removalPolicy: undefined,
     });
 
     sensorDataTable.addGlobalSecondaryIndex({
@@ -131,8 +130,8 @@ export class IotMonitoringStack extends Stack {
 
     new iot.CfnThingType(this, 'SensorThingType', {
       thingTypeName: 'SensorNode',
-      thingTypeDescription: 'Thing type for telemetry-producing sensor nodes.',
       thingTypeProperties: {
+        thingTypeDescription: 'Thing type for telemetry-producing sensor nodes.',
         searchableAttributes: ['location', 'sensorType'],
       },
     });

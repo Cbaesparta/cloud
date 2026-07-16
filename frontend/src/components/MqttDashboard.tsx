@@ -1,5 +1,6 @@
-import { FormEvent, useEffect, useMemo, useRef, useState } from 'react';
-import mqtt, { MqttClient } from 'mqtt';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import type { FormEvent } from 'react';
+import mqtt from 'mqtt';
 import {
   Line,
   LineChart,
@@ -40,7 +41,7 @@ export function MqttDashboard() {
   const [commandPayload, setCommandPayload] = useState<string>('{"action":"restart"}');
   const [historicalData, setHistoricalData] = useState<TelemetryPoint[]>([]);
   const [historyStatus, setHistoryStatus] = useState<string>('');
-  const clientRef = useRef<MqttClient | null>(null);
+  const clientRef = useRef<ReturnType<typeof mqtt.connect> | null>(null);
 
   useEffect(() => {
     if (!wsUrl) {
