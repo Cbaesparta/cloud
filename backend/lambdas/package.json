@@ -1,0 +1,17 @@
+{
+  "name": "backend-lambdas",
+  "version": "0.1.0",
+  "private": true,
+  "main": "src/telemetryProcessor.js",
+  "scripts": {
+    "lint": "echo \"No linter configured for lambdas\"",
+    "test": "node --test",
+    "build": "echo \"No build step required for plain Node.js lambda sources\""
+  },
+  "dependencies": {
+    "@aws-sdk/client-dynamodb": "^3.884.0",
+    "@aws-sdk/client-sqs": "^3.884.0",
+    "@aws-sdk/lib-dynamodb": "^3.884.0",
+    "ajv": "^8.17.1"
+  }
+}
