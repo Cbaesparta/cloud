@@ -1,0 +1,21 @@
+{
+  "name": "infrastructure",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "synth": "cdk synth",
+    "test": "echo \"No tests configured for infrastructure\""
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.210.0",
+    "constructs": "^10.4.2",
+    "source-map-support": "^0.5.21"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.2",
+    "aws-cdk": "^2.1027.0",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
